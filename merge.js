@@ -7,10 +7,13 @@ function mergeSort(array) {
 
   const leftHalf = mergeSort(array.slice(0, half));
   const rightHalf = mergeSort(array.slice(half));
-  
+
   let total = [];
 
-  while (leftHalf[0] && rightHalf[0]) {
+  while (
+    typeof leftHalf[0] !== "undefined" &&
+    typeof rightHalf[0] !== "undefined"
+  ) {
     if (leftHalf[0] < rightHalf[0]) {
       total.push(leftHalf.shift());
     } else {
